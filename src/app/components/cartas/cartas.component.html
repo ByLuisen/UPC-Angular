@@ -1,0 +1,35 @@
+<!-- Sección de cartas -->
+<section class="sectionCartas">
+  <div class="content">
+    <div class="info">
+      <p>¡Únete a nosotros para una emocionante aventura llena de estrategia, intriga y diversión! Ya seas un
+        maestro en tácticas o estés empezando en el mundo de los juegos de cartas estratégicos, tenemos una
+        experiencia diseñada para todos los niveles de habilidad. Prepárate para sumergirte en batallas épicas,
+        donde cada movimiento cuenta y la astucia es clave para la victoria.</p>
+      <button class="btn">Crear mazo</button>
+    </div>
+    <!-- Swiper para mostrar las cartas -->
+    <div class="swiper">
+      <div id="wrapper1" class="swiper-wrapper">
+        <!-- Iteración sobre los datos de las cartas -->
+        <div class="swiper-slide" *ngFor="let numero of numeros"
+          style="background: linear-gradient(to top, #27270f99, #203a4300, #2c536400), url('../images/{{ numero }}.webp') no-repeat 50% 50% / contain #d4ab30;"
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Círculos para la navegación del Swiper -->
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</section>
