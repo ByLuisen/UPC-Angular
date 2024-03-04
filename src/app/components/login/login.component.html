@@ -1,0 +1,41 @@
+<main>
+  <div style="height: 75px"></div>
+  <div class="container-fluid fondoLogin">
+    <div class="row justify-content-center">
+      <div class="col-2" style="margin-top: 130px;">
+        <h2 class="mt-5 text-center fw-bold fs-2 text-white">INICIAR SESIÓN</h2>
+        <form [formGroup]="login" (ngSubmit)="submit()" class="mt-2">
+          <fieldset>
+            <!--Correo electrónico-->
+            <div class="form-group" style="height: 120px;">
+              <label for="email" class="mt-3 text-white fs-4">Correo electrónico</label>
+              <input id="email" type="email" class="form-control" name="email" formControlName="email" required
+                autocomplete="email" autofocus style="border-radius: 25px; height: 45px; background-color:lightgray;" />
+            </div>
+
+            <!--Contrasenya-->
+            <div class="form-group" style="height: 150px;">
+              <label for="password" class="text-white fs-4">Contraseña</label>
+              <input id="password" type="password" class="form-control" name="password" required
+                autocomplete="current-password" formControlName="password"
+                style="border-radius: 25px; height: 45px; background-color:lightgray;">
+              <span class="invalid-feedback text-center"
+                *ngIf="this.login.get('email')?.errors?.['required'] && this.login.get('email')?.touched" role="alert">
+                <strong>Este campo es obligatorio</strong>
+              </span>
+              <small *ngIf="this.login.get('email')?.errors?.['pattern'] && this.login.get('email')?.touched">
+                El formato del email introducido es incorrecto
+              </small>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn border rounded-pill fs-5"
+                style="background-color: #5B5A95; height: 50px; color: #ff9db7;" [disabled]="login.invalid">
+                Iniciar Sesión
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

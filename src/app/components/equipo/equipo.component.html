@@ -1,21 +1,49 @@
-<!-- Sección de equipos -->
 <div class="wrapper">
-  <section class="module-team">
-      <div class="team">
-          <h2 class="title">Conoce nuestro equipo</h2>
-          <div class="team-cards">
-              <!-- Contenedor para el slider de equipo -->
-              <div class="swiper-container">
-                  <!-- Slides del equipo -->
-                  <div id="wrapper2" class="swiper-wrapper"></div>
-              </div>
-              <!-- Paginación y botones de navegación del slider -->
-              <div class="swiper-pagination"></div>
-              <div class="navigation">
-                  <div class="swiper-button-prev"></div>
-                  <div class="swiper-button-next"></div>
-              </div>
-          </div>
-      </div>
-  </section>
+    <section class="module-team">
+        <div class="team">
+            <h2 class="title">Conoce nuestro equipo</h2>
+            <div class="team-cards">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngFor="let member of team; let i = index">
+                            <div class="card" >
+                                <span class="bg"></span>
+                                <span class="more"></span>
+                                <figure class="photo">
+                                    <img [src]="member.photo" alt="Photo of {{ member.name }}">
+                                </figure>
+                                <article class="text">
+                                    <p class="name">{{ member.name }}</p>
+                                    <p class="role">{{ member.role }}</p>
+                                    <p class="desc">{{ member.desc }}</p>
+                                </article>
+                                <div class="social">
+                                    <span class="pointer"></span>
+                                    <div class="icons">
+                                        <a class="icon" [href]="member.website" target="_blank" data-index="0" #iconWebsite>
+                                            <img [src]="icons.iWebsite" alt="Website icon">
+                                        </a>
+                                        <a class="icon" [href]="member.email" target="_blank" data-index="1" #iconEmail>
+                                            <img [src]="icons.iEmail" alt="Email icon">
+                                        </a>
+                                        <a class="icon" [href]="member.linkedin" target="_blank" data-index="2" #iconLinkedin>
+                                            <img [src]="icons.iLinkedin" alt="LinkedIn icon">
+                                        </a>
+                                        <a class="icon" [href]="member.dribbble" target="_blank" data-index="3" #iconDribbble>
+                                            <img [src]="icons.iDribbble" alt="Dribbble icon">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="navigation">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

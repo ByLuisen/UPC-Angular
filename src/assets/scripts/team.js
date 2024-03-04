@@ -1,13 +1,15 @@
 import swiper from 'https://cdn.jsdelivr.net/npm/swiper@4.5.0/+esm'
 
-var swiperWrapper = document.getElementById('wrapper2');
+document.addEventListener('DOMContentLoaded', function() {
+  var swiperWrapper = document.getElementById('wrapper2');
+
 
 /* The Team */
 var team = [{
     name: "Jordi Gomez",
     role: "Game Developer",
     desc: "Reconocido diseñador de videojuegos conocido por su habilidad para crear experiencias inmersivas y emocionantes.",
-    photo: "images/avatar1sf.webp",
+    photo: "assets/images/avatar1sf.webp",
     website: "https://www.google.es/",
     email: "https://www.google.com/intl/es/gmail/about/",
     linkedin: "https://www.linkedin.com/home",
@@ -17,7 +19,7 @@ var team = [{
     name: "Miguel Martinez",
     role: "Game Developer",
     desc: "Diseñador de videojuegos que destaca por su capacidad para desarrollar mecánicas de juego.",
-    photo: "images/avatar2sf.webp",
+    photo: "assets/images/avatar2sf.webp",
     website: "https://www.google.es/",
     email: "https://www.google.com/intl/es/gmail/about/",
     linkedin: "https://www.linkedin.com/home",
@@ -27,7 +29,7 @@ var team = [{
     name: "Ivan Pascuas",
     role: "Game Developer",
     desc: "Su habilidad para fusionar elementos visuales proporciona a los jugadores una experiencia inmersiva única.",
-    photo: "images/avatar3sf.webp",
+    photo: "assets/images/avatar3sf.webp",
     website: "https://www.google.es/",
     email: "https://www.google.com/intl/es/gmail/about/",
     linkedin: "https://www.linkedin.com/home",
@@ -37,7 +39,7 @@ var team = [{
     name: "Luis Ledesma",
     role: "Web Developer",
     desc: "El mejor programador de este siglo, es el faker de la programación",
-    photo: "images/luisen.webp",
+    photo: "assets/images/luisen.webp",
     website: "https://www.google.es/",
     email: "https://www.google.com/intl/es/gmail/about/",
     linkedin: "https://www.linkedin.com/home",
@@ -47,7 +49,7 @@ var team = [{
     name: "Julian Ortega",
     role: "Web Developer",
     desc: "Apasionado por el desarrollo web y la innovación.",
-    photo: "images/julian.webp",
+    photo: "assets/images/julian.webp",
     website: "https://www.google.es/",
     email: "https://www.google.com/intl/es/gmail/about/",
     linkedin: "https://www.linkedin.com/home",
@@ -57,7 +59,7 @@ var team = [{
     name: "Christian Sastre",
     role: "Web Developer",
     desc: "Hábil desarrollador web con una pasión por crear experiencias digitales innovadoras. Record 0-10",
-    photo: "images/calvo.webp",
+    photo: "assets/images/calvo.webp",
     website: "https://www.google.es/",
     email: "https://www.google.com/intl/es/gmail/about/",
     linkedin: "https://www.linkedin.com/home",
@@ -67,7 +69,7 @@ var team = [{
     name: "Pau Lopez",
     role: "Web Developer",
     desc: "Su talento y su forma de programar son inigualables",
-    photo: "images/pau.webp",
+    photo: "assets/images/pau.webp",
     website: "https://www.google.es/",
     email: "https://www.google.com/intl/es/gmail/about/",
     linkedin: "https://www.linkedin.com/home",
@@ -217,3 +219,4 @@ function followCursor(event) {
 
 
 /* end */
+})

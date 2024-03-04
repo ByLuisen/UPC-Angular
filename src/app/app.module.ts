@@ -14,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { EquipoComponent } from './components/equipo/equipo.component';
 import { CartasComponent } from './components/cartas/cartas.component';
 import { HomeComponent } from './components/home/home.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { MisEventosComponent } from './components/mis-eventos/mis-eventos.component';
+import { CrearEventoComponent } from './components/crear-evento/crear-evento.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { HomeComponent } from './components/home/home.component';
     CartasComponent,
     NotFoundComponent,
     HomeComponent,
+    EventosComponent,
+    MisEventosComponent,
+    CrearEventoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

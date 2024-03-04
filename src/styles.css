@@ -7,27 +7,8 @@ body * {
     box-sizing: border-box;
 }
 
-body {
-    /* background-image: url("../../../assets/images/fondo.webp"); */
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-body,
 html,
-main {
+body {
     height: 100%;
     margin: 0;
-}
-
-/* Carousel styling */
-#introCarousel,
-.carousel-inner,
-.carousel-item,
-.carousel-item.active {
-    height: 100vh;
-}
-
-#player {
-    width: 100%;
 }

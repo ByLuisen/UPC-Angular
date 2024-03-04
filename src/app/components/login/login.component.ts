@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,30 +12,19 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {}
-//   constructor(private formBuilder: FormBuilder, private router: Router) {}
+export class LoginComponent {
+  login!: FormGroup;
 
-//   ngOnInit(): void {
-//     this.loginForm = this.formBuilder.group({
-//       email: ['', [Validators.required, Validators.email]],
-//       password: ['', Validators.required],
-//     });
-//   }
+  constructor() {}
 
-//   get f() {
-//     return this.loginForm.controls;
-//   }
+  ngOnInit(): void {
+    this.login = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', Validators.required),
+    });
+  }
 
-//   onSubmit() {
-//     this.submitted = true;
-
-//     // Detener si el formulario no es válido
-//     if (this.loginForm.invalid) {
-//       return;
-//     }
-
-//     // Lógica de inicio de sesión aquí
-//     console.log('Iniciar sesión exitoso');
-//     this.router.navigate(['/dashboard']); // Redirigir a la página de inicio después de iniciar sesión
-//   }
-// }
+  submit(): void {
+    // Aquí puedes agregar la lógica para enviar los datos del formulario a tu servicio de validación
+  }
+}
