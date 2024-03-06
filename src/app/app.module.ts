@@ -17,6 +17,10 @@ import { HomeComponent } from './components/home/home.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { MisEventosComponent } from './components/mis-eventos/mis-eventos.component';
 import { CrearEventoComponent } from './components/crear-evento/crear-evento.component';
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { GestionarCartasComponent } from './components/gestionar-cartas/gestionar-cartas.component';
+import { MiembrosComponent } from './components/miembros/miembros.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { CrearEventoComponent } from './components/crear-evento/crear-evento.com
     EventosComponent,
     MisEventosComponent,
     CrearEventoComponent,
+    UsuariosComponent,
+    GestionarCartasComponent,
+    MiembrosComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
