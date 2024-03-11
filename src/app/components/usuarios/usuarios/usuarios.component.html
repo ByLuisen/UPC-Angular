@@ -1,0 +1,73 @@
+<main>
+  <div class="container-fluid" style="padding: 110px 0px 44px">
+    <div class="row justify-content-between m-0">
+      <div class="col-1"></div>
+      <div class="col-8 usuarios">
+        <h1 class="p-0">USUARIOS</h1>
+        <table class="table-striped table-bordered table-hover">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Email</th>
+              <th scope="col">Contraseña</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of usuarios; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <!-- Nombre -->
+              <td>
+                <input type="text" style="color:white;" class="form-control bg-danger" [(ngModel)]="user.name" />
+              </td>
+              <td>
+                <input type="text" style="color:white;" class="form-control bg-danger" [(ngModel)]="user.email" />
+              </td>
+              <td>
+                <input type="password" style="color:white;" class="form-control bg-danger" [(ngModel)]="user.password" />
+              </td>
+              <td>
+                <button type="submit" class="btn btn-success" (click)="updateUsuario(user)">
+                  Editar
+                </button>
+              </td>
+              <td>
+                <button type="submit" class="btn btn-danger" (click)="eliminarUsuario(user.id)">
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-2 filtros">
+        <div class="row">
+          <div class="col p-0">
+            <h2 class="p-0">FILTRAR</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col p-0">
+            <form>
+              <div class="form-group">
+                <label for="name" class="text-white">Por jugador</label>
+                <input id="name" type="text" placeholder="Jugador" name="name" class="form-control"
+                  [(ngModel)]="searchName" />
+
+                <div class="mt-2 text-center">
+                  <button type="submit" class="btn p-1 text-light" style="background-color: #ff0000"
+                    (click)="searchUser()">
+                    Buscar
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div>
+</main>

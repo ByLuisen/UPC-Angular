@@ -1,0 +1,12 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgb(32, 32, 114);
+}
+
+h1 {
+  color: white;
+  font-size: 80px;
+}

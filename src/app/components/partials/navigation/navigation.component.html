@@ -1,0 +1,63 @@
+<nav
+  class="navbar fixed-top navbar-expand-md navbar-dark border border-2 border-dark-subtle shadow-lg m-2 p-1 rounded-5 bg-black bg-opacity-50"
+  style="backdrop-filter: blur(8px)">
+  <div class="container fs-5">
+    <a class="navbar-brand p-0" routerLink="/home">
+      <img src="assets/images/logo.webp" alt="Logo" height="40" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left Side Of Navbar -->
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/eventos">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/rankings">Ranking</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged && userRole == 'admin'">
+          <a class="nav-link text-white" routerLink="/usuarios">Usuarios</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged && userRole == 'admin'">
+          <a class="nav-link text-white" routerLink="/gestionar-cartas">Cartas</a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged && userRole == 'admin'">
+          <a class="nav-link text-white" routerLink="/miembros">Miembros</a>
+        </li>
+      </ul>
+
+      <!-- Right Side Of Navbar -->
+      <ul class="navbar-nav ms-auto">
+        <!-- Authentication Links -->
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link text-white" routerLink="/login">Iniciar sesión</a>
+        </li>
+
+        <li class="nav-item" *ngIf="!isLogged">
+          <a class="nav-link text-white" routerLink="/registro">Registrarse</a>
+        </li>
+
+        <li class="nav-item dropdown" *ngIf="isLogged">
+          <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+            {{ userName }}
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item text-white" routerLink="perfil">
+              Tu perfil
+            </a>
+
+            <a class="dropdown-item text-white" (click)="logout()">
+              Logout
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,92 @@
+<main>
+  <div style="margin-top: 110px">
+    <div class="container">
+      <form [formGroup]="crearCartaForm" (ngSubmit)="submit()" method="post" enctype="multipart/form-data"
+        class="row justify-content-center">
+        <div class="col-4 text-center">
+          <!-- PHOTO DE LA CARTA -->
+          <div class="form-input text-center">
+            <div class="preview">
+              <img id="file-ip-1-preview" alt="Imagen previa" />
+            </div>
+            <label for="file-ip-1">Subir imagen</label>
+            <input type="file" id="file-ip-1" formControlName="photo" accept="image/png, image/jpeg, image/webp" />
+            <div class="text-danger" *ngIf="
+              crearCartaForm.get('photo')?.hasError('required') &&
+              crearCartaForm.get('photo')?.touched
+            ">
+              Se requiere una foto para la carta
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 container1">
+          <h4 class="text-center">Crear Carta</h4>
+
+          <!-- NOMBRE DE LA CARTA -->
+          <div class="input-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" formControlName="nombre" placeholder="Nombre de la carta" />
+          </div>
+
+          <!-- ERROR REQUERIDO -->
+          <div class="text-danger" *ngIf="
+            crearCartaForm.get('nombre')?.hasError('required') &&
+            crearCartaForm.get('nombre')?.touched
+          ">
+            Selecciona un nombre para la carta
+          </div>
+          <!-- ERROR MAX LENGTH -->
+          <div class="text-danger" *ngIf="
+            crearCartaForm.get('nombre')?.hasError('maxLength') &&
+            crearCartaForm.get('nombre')?.dirty
+          "></div>
+          <!-- TIPO DE ROL -->
+          <div class="input-group input-group-icon">
+            <label for="role">Rol</label>
+
+            <select formControlName="role" name="role" id="role" style="width: 511px">
+              <option value="">Selecciona un rol</option>
+              <option *ngFor="let rol of roles" [value]="rol">{{ rol }}</option>
+            </select>
+          </div>
+          <div class="text-danger" *ngIf="
+            crearCartaForm.get('role')?.hasError('required') &&
+            crearCartaForm.get('role')?.touched
+          ">
+            Selecciona un rol para la carta
+          </div>
+
+          <!-- ELIXIR DE LA CARTA -->
+          <div class="input-group">
+            <label for="coste_elixir">Coste de elixir</label>
+            <br />
+            <select formControlName="coste_elixir" name="coste_elixir" id="coste_elixir" style="width: 511px">
+              <option value="">Selecciona el coste de elexir</option>
+              <option value="" *ngFor="let elexir of costeElixir"></option>
+            </select>
+          </div>
+          <!-- Mensaje de error para el campo requerido -->
+          <div class="text-danger" *ngIf="
+            crearCartaForm.get('coste_elixir')?.hasError('required') &&
+            crearCartaForm.get('coste_elixir')?.touched
+          ">
+            Selecciona el coste de elixir para la carta
+          </div>
+          <!-- Mensaje de error para el rango de valores -->
+          <div class="text-danger" *ngIf="
+            crearCartaForm.get('coste_elixir')?.hasError('min') ||
+            crearCartaForm.get('coste_elixir')?.hasError('max')
+          ">
+            El coste de elixir debe estar entre 1 y 10
+          </div>
+          <div class="text-center mt-3">
+            <button type="submit" class="btn rounded-pill fs-5 text-white" style="background-color: #c26a11">
+              Crear carta
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

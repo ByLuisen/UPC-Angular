@@ -1,0 +1,144 @@
+<div class="page-wrapper fondoGif p-t-180 p-b-100 font-poppins">
+  <div class="wrapper wrapper--w780">
+    <div class="card card-3">
+      <div class="card-heading"></div>
+      <div class="card-body">
+        <h2 class="title">Registro</h2>
+        <!-- Formulario de registro -->
+        <form [formGroup]="registro" (ngSubmit)="submit()">
+          <!-- Campo de nombre de usuario -->
+          <div class="input-group">
+            <input
+              type="text"
+              class="input--style-3"
+              formControlName="name"
+              name="name"
+              required
+              placeholder="Nombre de usuario"
+              autofocus
+            />
+            <!-- Validación del campo de nombre de usuario -->
+            <div
+              *ngIf="
+                registro.controls['name'].invalid &&
+                (registro.controls['name'].dirty ||
+                  registro.controls['name'].touched)
+              "
+              class="text-danger"
+            >
+              <div *ngIf="registro.controls['name'].hasError('required')">
+                Nombre de usuario es requerido
+              </div>
+              <div *ngIf="registro.controls['name'].hasError('maxlength')">
+                Nombre de usuario debe tener máximo 150 caracteres
+              </div>
+            </div>
+          </div>
+          <!-- Campo de correo electrónico -->
+          <div class="input-group">
+            <input
+              type="email"
+              class="input--style-3"
+              formControlName="email"
+              name="email"
+              required
+              placeholder="Correo electrónico"
+            />
+            <!-- Validación del campo de correo electrónico -->
+            <div
+              *ngIf="
+                registro.controls['email'].invalid &&
+                (registro.controls['email'].dirty ||
+                  registro.controls['email'].touched)
+              "
+              class="text-danger"
+            >
+              <div *ngIf="registro.controls['email'].hasError('required')">
+                Correo electrónico es requerido
+              </div>
+              <div *ngIf="registro.controls['email'].hasError('email')">
+                Correo electrónico debe ser válido
+              </div>
+            </div>
+          </div>
+          <!-- Campo de contraseña -->
+          <div class="input-group">
+            <input
+              type="password"
+              class="input--style-3"
+              formControlName="password"
+              name="password"
+              required
+              placeholder="Contraseña"
+            />
+            <!-- Validación del campo de contraseña -->
+            <div
+              *ngIf="
+                registro.controls['password'].invalid &&
+                (registro.controls['password'].dirty ||
+                  registro.controls['password'].touched)
+              "
+              class="text-danger"
+            >
+              <div *ngIf="registro.controls['password'].hasError('required')">
+                Contraseña es requerida
+              </div>
+            </div>
+          </div>
+          <!-- Campo de confirmar contraseña -->
+          <div class="input-group">
+            <input
+              type="password"
+              class="input--style-3"
+              formControlName="password_confirmation"
+              name="password_confirmation"
+              required
+              placeholder="Confirmar contraseña"
+              appRepetirPassword="password"
+            />
+            <!-- Validación del campo de confirmar contraseña -->
+            <div
+              *ngIf="
+                registro.controls['password_confirmation'].invalid &&
+                (registro.controls['password_confirmation'].dirty ||
+                  registro.controls['password_confirmation'].touched)
+              "
+              class="text-danger"
+            >
+              <div
+                *ngIf="
+                  registro.controls['password_confirmation'].hasError(
+                    'required'
+                  )
+                "
+              >
+                Confirmar contraseña es requerida
+              </div>
+              <div
+                *ngIf="
+                  registro.controls['password_confirmation'].hasError(
+                    'mismatch'
+                  )
+                "
+                class="text-danger"
+              >
+                Las contraseñas no coinciden
+              </div>
+            </div>
+          </div>
+          <!-- Botón de registro -->
+          <div class="p-t-10">
+            <button
+              type="submit"
+              class="btn rounded-pill fs-5"
+              style="background-color: #9b6c3f; height: 50px; color: white"
+              [disabled]="registro.invalid"
+            >
+              Registrarse
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+
+main {
+  background-image: url("../../../../assets/images/fondo.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.fondoLogin {
+  height: calc(100% - 75px);
+  background-image: url("../../../../assets/images/fondoLogin.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}

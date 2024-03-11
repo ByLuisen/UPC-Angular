@@ -12,3 +12,8 @@ body {
     height: 100%;
     margin: 0;
 }
+
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('./assets/fonts/Comfortaa-VariableFont_wght.ttf');
+}
