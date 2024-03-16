@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Evento } from '../../../model/Evento';
 import { HttpService } from '../../../services/http.service';
 import { Router } from '@angular/router';
-import flatpickr from 'flatpickr';
 import { Spanish } from 'flatpickr/dist/l10n/es';
 
 @Component({
@@ -29,18 +28,18 @@ export class CrearEventoComponent implements OnInit {
       password_confirmation: new FormControl('', Validators.required),
     });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const fechaInicioInput = document.getElementById(
-        'fecha_inicio'
-      ) as HTMLInputElement;
-      flatpickr(fechaInicioInput, {
-        locale: Spanish,
-        enableTime: true,
-        dateFormat: 'd/m/Y H:i',
-        minDate: 'today',
-        maxDate: new Date().setMonth(new Date().getMonth() + 1),
-      });
-    });
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   const fechaInicioInput = document.getElementById(
+    //     'fecha_inicio'
+    //   ) as HTMLInputElement;
+    //   flatpickr(fechaInicioInput, {
+    //     locale: Spanish,
+    //     enableTime: true,
+    //     dateFormat: 'd/m/Y H:i',
+    //     minDate: 'today',
+    //     maxDate: new Date().setMonth(new Date().getMonth() + 1),
+    //   });
+    // });
 
     this.message = '';
 

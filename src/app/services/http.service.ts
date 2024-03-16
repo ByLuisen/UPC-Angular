@@ -14,7 +14,8 @@ import { Registro } from '../model/Registro';
 })
 export class HttpService {
   private jwtHelper: JwtHelperService = new JwtHelperService(); // Servicio para manejar JWT
-  url: string = 'http://localhost:8000'; // URL base para las solicitudes HTTP
+  // url: string = 'http://localhost:8000'; // URL base para las solicitudes HTTP
+  url: string = 'http://49.13.160.230'; // URL del servidor
   private usuariSubject: BehaviorSubject<any>; // Subject para mantener el estado del usuario autenticado
   public usuario: Observable<any>; // Observable que emite el estado del usuario
 

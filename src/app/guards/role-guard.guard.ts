@@ -25,8 +25,8 @@ export class RoleGuardGuard implements CanActivate {
    */
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const role = this.httpService.getRole(); // Obtener el rol del usuario desde el servicio HTTP
-
-    if (role === 'admin') {
+    
+    if (role == 'admin') {
       // Si el usuario tiene el rol de administrador, permitir el acceso
       return true;
     }
